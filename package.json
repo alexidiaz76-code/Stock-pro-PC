@@ -1,0 +1,40 @@
+{
+  "name": "stockpro",
+  "productName": "StockPro",
+  "version": "1.0.0",
+  "description": "StockPro para computadora",
+  "author": "Evolution Cell HN",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^33.4.11",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "hn.stockpro.escritorio",
+    "productName": "StockPro",
+    "files": [
+      "main.js",
+      "package.json",
+      "icon.png",
+      "www/**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "icon.png",
+      "artifactName": "StockPro-${version}-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "StockPro"
+    }
+  }
+}
